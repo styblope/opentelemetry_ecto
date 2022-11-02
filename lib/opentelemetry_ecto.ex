@@ -93,6 +93,9 @@ defmodule OpentelemetryEcto do
       source: source,
       "db.instance": database,
       "db.url": url,
+      "db.system": "postgres",
+      "net.peer.port": "5432", 
+      "net.peer.name": repo.config()[:hostname],
       "total_time_#{time_unit}s": System.convert_time_unit(total_time, :native, time_unit)
     }
 
